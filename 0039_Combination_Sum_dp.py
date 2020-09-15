@@ -16,7 +16,7 @@ class Solution:
             for number in candidates:
                 if number > i: break
                 for s in dp[i - number]:
-                    if not s or number >= L[-1]: 
+                    if not s or number >= s[-1]: 
                         dp[i] += [s + [number]]
         return dp[target]
         
