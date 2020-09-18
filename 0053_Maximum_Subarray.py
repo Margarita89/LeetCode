@@ -11,10 +11,7 @@ class Solution:
         """
         max_sum = tot_sum = nums[0]
         for i in range(1, len(nums)):
-            if tot_sum < 0:
-                tot_sum = nums[i]
-            else:
-                tot_sum += nums[i]
+            tot_sum = max(tot_sum + nums[i], nums[i])
             max_sum = max(max_sum, tot_sum)
         return max_sum
         
