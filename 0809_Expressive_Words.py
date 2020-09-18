@@ -15,7 +15,7 @@ class Solution:
             for i in range(n):
                 if j < m and S[i] == W[j]: 
                     j += 1
-                elif S[i - 1:i + 2] != S[i] * 3 != S[i - 2:i + 1]:  
+                elif S[i - 1:i + 2] != S[i] * 3 and S[i - 2:i + 1] != S[i] * 3:  
                     return False
             return j == m
         
