@@ -1,4 +1,3 @@
-import heapq 
 class Solution:
     def kClosest(self, points: List[List[int]], K: int) -> List[List[int]]:
         """
@@ -11,8 +10,8 @@ class Solution:
         heap = [] 
         for point in points:
             square = point[0] ** 2 + point[1] ** 2
-            heapq.heappush(heap, (-square, point))
+            heappush(heap, (-square, point))
             if len(heap) == K + 1:
-                _ = heapq.heappop(heap)       
+                heappop(heap)       
 
         return [point for _, point in heap]
