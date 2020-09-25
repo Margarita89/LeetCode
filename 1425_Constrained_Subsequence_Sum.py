@@ -14,7 +14,7 @@ class Solution:
         q = deque()
         for i in range(len(nums)):
             nums[i] += q[0] if q else 0  # make nums[i] current max using it
-            while q and nums[i] > q[-1]:  # decreasing stack -> make sure deque[0] is max
+            while q and nums[i] > q[-1]:  # decreasing deque -> make sure q[0] is max
                 q.pop()
             if nums[i] > 0:  # don't need to append negatives
                 q.append(nums[i])

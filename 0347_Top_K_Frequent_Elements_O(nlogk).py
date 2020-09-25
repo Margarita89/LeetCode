@@ -7,10 +7,8 @@ class Solution:
         """
         count_elements = Counter(nums)
         elem_freq = []
-        i = 0
         for key, value in count_elements.items():
             heappush(elem_freq, (value, key))
-            if i >= k: 
+            if len(elem_freq) > k: 
                 heappop(elem_freq)
-            i += 1
         return [key for _, key in elem_freq]
